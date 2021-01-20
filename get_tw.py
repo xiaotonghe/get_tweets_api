@@ -1,7 +1,7 @@
 import requests
 import os
 import json
-from config import BEARER_TOKEN
+from config.config import BEARER_TOKEN
 
 
 def init_search_url(query):
@@ -12,7 +12,7 @@ def init_search_url(query):
     return url
 
 
-def create_url(next_token='', query):
+def create_url(query, next_token):
     query = query
     url = "https://api.twitter.com/2/tweets/search/recent?query={}&next_token={}".format(
         query, next_token
